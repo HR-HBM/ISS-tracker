@@ -3,6 +3,9 @@ from datetime import datetime
 import smtplib
 import time
 
+
+#enter your email address and password
+
 MY_EMAIL = ""
 MY_PASSWORD = ""
 
@@ -48,7 +51,7 @@ def is_night():
 while True:
     time.sleep(60)
     if is_iss_overhead() and is_night():
-        connection = smtplib.SMTP("smtp. gmail.com")
+        connection = smtplib.SMTP("smtp. gmail.com", 587)
         connection.starttls()
         connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(
